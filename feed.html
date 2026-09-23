@@ -14,6 +14,45 @@
     <script src="js/main/feed.js" type="module"></script>
 </head>
 <body>
-    
+    <header>
+        <nav class="navbar">
+            <label for="menu-checkbox" class="hamburger-menu">&#9776;</label>
+            <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+            <h2 class="logo">Connect</h2>
+            <ul class="navbar-links">
+                <li><a href="feed.html" class="navbar-option">Feed</a></li>
+                <li><a href="profile.html" class="navbar-option">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Feed</h1>
+        <div class="feed-container">
+            <form class="search-form">
+                <label for="searchPosts" class="sr-only">Search for posts:</label>
+                <input type="search" id="searchPosts" name="searchPosts" placeholder="Search posts..." class="search-input">
+                <button id="searchBtn" type="button" class="search-button">Search</button>
+            </form>
+            <div>
+                <form id="createPostForm" class="create-post-form">
+                    <label for="postTitle" class="sr-only">Post Title</label>
+                    <input type="text" id="postTitle" name="title" class="create-post-input" placeholder="Post Title" required>
+                    <label for="postContent" class="sr-only">Post Content</label>
+                    <textarea id="postContent" name="content" class="create-post-textarea" placeholder="Write your post here..." required></textarea>
+                    <label for="postTags" class="sr-only">Post tags</label>
+                    <input type="text" id="postTags" name="tags" class="create-post-input" placeholder="Tags (optional)">
+                    <label for="postImgUrl" class="sr-only">Image URL(optional)</label>
+                    <input type="url" id="postImgUrl" class="create-post-input" name="imageUrl" placeholder="Image URL (optional)">
+                    <button type="submit" class="publish-btn">Publish Post</button>
+                </form>
+                <button id="createPostButton" class="create-post-button">+ Create new post</button>
+            </div>
+        </div>
+        <div id="postContainer" class="post-container"></div>
+    </main>
+    <footer>
+        <img src="favicon_io/favicon.ico" alt="connect logo" class="footer-logo">
+        <p>&copy; 2026 Connect. All rights reserved.</p>
+    </footer>
 </body>
 </html>
