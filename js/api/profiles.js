@@ -28,3 +28,17 @@ export async function getProfile(name) {
     const data = await response.json();
     return data.data;
 }
+
+// Get users posts
+export async function getProfilePosts(name) {
+    const response = await fetch(`${BASE_URL}/${name}/posts`, {
+        headers: getHeaders(),
+    });
+
+    if (!response.ok) {
+        throw new Error(`Failed to fetch profile posts.`);
+    }
+
+    const data = await response.json();
+    return data.data;
+}
