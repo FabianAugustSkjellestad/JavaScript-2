@@ -14,3 +14,17 @@ function getHeaders() {
         "Content-Type": "application/json",
     };
 }
+
+// Get profile
+export async function getProfile(name) {
+    const response = await fetch(`${BASE_URL}/${name}`, {
+        headers: getHeaders(),
+    });
+
+    if (!response.ok) {
+        throw new Error(`Failed to fetch profile.`);
+    }
+
+    const data = await response.json();
+    return data.data;
+}
