@@ -89,3 +89,12 @@ export function renderProfile(profile, container) {
     header.appendChild(summary);
 
     container.appendChild(header);
+
+    // Posts
+    const postsSection = document.createElement("div");
+    postsSection.className = "profile-posts";
+
+    container.appendChild(postsSection);
+    
+    renderPosts(profile.posts, postsSection);
+}
