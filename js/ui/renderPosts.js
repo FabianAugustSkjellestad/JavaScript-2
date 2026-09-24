@@ -56,4 +56,34 @@ export function renderPosts(posts, container) {
             const editButton = document.createElement("button");
             const deleteButton = document.createElement("button");
 
+            editButton.className = "edit-button";
+            deleteButton.className = "delete-button";
             editButton.textContent = "Edit";
+            deleteButton.textContent = "Delete";
+
+            postElement.appendChild(editButton);
+            postElement.appendChild(deleteButton);
+
+            editButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.location.href = `./editPost.html?id=${post.id}`;
+            });
+
+            deleteButton.addEventListener("click", async (e) => {
+                e.preventDefault();
+                if (confirm("Are you sure you want to delete this post?")) {
+                    try {
+                        await deletePost(post.id);
+                        postElement.remove();
+                    } catch (error) {
+                        console.error("Error deleting post:", error);
+                        alert("Failed to delete the post. Please try again.");
+                    }
+                }
+            });
+        }
+
+        postElement.appendChild(postTitle);
+        postElement.appendChild(postBody);
+
+        if 
