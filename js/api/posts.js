@@ -100,3 +100,17 @@ export async function updatePost(postId, postData) {
     const data = await response.json();
     return data.data;
 }
+
+// Delete a post
+export async function deletePost(postId) {
+    const response = await fetch(`${BASE_URL}/${postId}`, {
+        method: 'DELETE',
+        headers: getHeaders(),
+    });
+
+    if (!response.ok) {
+        throw new Error(`Failed to delete post.`);
+    }
+
+    return true;
+}
