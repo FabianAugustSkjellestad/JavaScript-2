@@ -85,5 +85,3 @@ export function renderPosts(posts, container) {
 
         postElement.appendChild(postTitle);
         postElement.appendChild(postBody);
-
-        if 
