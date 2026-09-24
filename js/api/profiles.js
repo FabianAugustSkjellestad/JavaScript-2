@@ -57,3 +57,18 @@ export async function followUser(name) {
     const data = await response.json();
     return data.data;
 }
+
+// Unfollow user
+export async function unfollowUser(name) {
+    const response = await fetch(`${BASE_URL}/${name}/unfollow`, {
+        method: 'PUT',
+        headers: getHeaders(),
+    });
+
+    if (!response.ok) {
+        throw new Error(`Failed to unfollow user.`);
+    }
+
+    const data = await response.json();
+    return data.data;
+}
