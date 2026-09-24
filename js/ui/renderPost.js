@@ -58,3 +58,7 @@ export function renderSinglePost(post, container) {
         postImage.className = "post-image";
         postCard.appendChild(postImage);
     }
+        
+    // Append the complete post card to the container
+    container.appendChild(postCard);
+}
