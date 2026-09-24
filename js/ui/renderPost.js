@@ -58,5 +58,3 @@ export function renderSinglePost(post, container) {
         postImage.className = "post-image";
         postCard.appendChild(postImage);
     }
-
-    // Meta section
