@@ -13,3 +13,47 @@ import { deletePost } from "../api/posts.js";
  * const container = document.getElementById('posts-container');
  * renderPosts(posts, container);
  */
+export function renderPosts(posts, container) {
+
+    container.innerHTML = "";
+
+    posts.forEach(post => {
+        const postElement = document.createElement("div");
+        const postTitle = document.createElement("h2");
+        const postBody = document.createElement("p");
+
+        postElement.className = "post";
+        postTitle.className = "post-title";
+        postBody.className = "post-body";
+
+        postTitle.textContent = post.title || "Untitled Post";
+        postBody.textContent = post.body || "";
+
+        if (post.author) {
+            const authorSection = document.createElement("div");
+            const authorName = document.createElement("a");
+
+            if (post.author.avatar?.url) {
+                const avatar = document.createElement("img");
+                avatar.src = post.author.avatar.url;
+                avatar.alt = post.author.avatar.alt || "Author's avatar";
+                avatar.className = "author-avatar";
+                authorSection.appendChild(avatar);
+            }
+
+            authorSection.className = "post-author";
+            authorName.textContent = post.author.username || "Unknown Author";
+            authorName.href = `/profile.html?username=${post.author.username}`;
+            authorSection.appendChild(authorName);
+
+            postElement.appendChild(authorSection);
+        }
+
+        const username = localStorage.getItem("username");
+
+        if (post.author?.username === username) {
+
+            const editButton = document.createElement("button");
+            const deleteButton = document.createElement("button");
+
+            editButton.textContent = "Edit";
