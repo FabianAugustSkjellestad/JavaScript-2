@@ -85,3 +85,29 @@ export function renderPosts(posts, container) {
 
         postElement.appendChild(postTitle);
         postElement.appendChild(postBody);
+
+        if (post.tags?.length) {
+            const postTags = document.createElement("p");
+            postTags.className = "post-tags";
+            postTags.textContent = `#${post.tags.join("#")}`;
+            postElement.appendChild(postTags);
+        }
+
+        if (post.media?.url) {
+            const postImage = document.createElement("img");
+            postImage.src = post.media.url;
+            postImage.alt = post.media.alt || "Post image";
+            postImage.className = "post-image";
+            postElement.appendChild(postImage);
+        }
+
+        postElement.addEventListener("click", (e) => {
+            if (e.target.closest("button") || e.target.closest("a")) return; // Prevent navigation if a button or link was clicked
+            window.location.href = `./post.html?id=${post.id}`;
+        }
+
+        );
+        container.appendChild(postElement);
+    });
+}
+
