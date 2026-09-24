@@ -37,3 +37,21 @@ export function isValidEmail(email) {
 
     return { valid: true, message: "" };
 }
+
+/**
+ * This function checks if the password is valid.
+ * @param {string} password - The password to validate.
+ * @returns {{valid: boolean, message: string}} - An object containing the validation result and an error message if invalid.
+ */
+export function isValidPassword(password) {
+    const trimmed = password.trim();
+
+    if (trimmed.length < 8) {
+        return {
+            valid: false,
+            message: "Password must be at least 8 characters long."
+        };
+    }
+
+    return { valid: true, message: "" };
+}
