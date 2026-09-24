@@ -42,3 +42,18 @@ export async function getProfilePosts(name) {
     const data = await response.json();
     return data.data;
 }
+
+// Follow user
+export async function followUser(name) {
+    const response = await fetch(`${BASE_URL}/${name}/follow`, {
+        method: 'PUT',
+        headers: getHeaders(),
+    });
+
+    if (!response.ok) {
+        throw new Error(`Failed to follow user.`);
+    }
+
+    const data = await response.json();
+    return data.data;
+}
