@@ -30,4 +30,25 @@ document.addEventListener("DOMContentLoaded", () => {
             fetchPosts(); // Fetch all posts if search query is empty
         }
     });
+
+    searchInput.addEventListener("keydown", async (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            const query = searchInput.value.trim();
+
+            if (query) {
+                const posts = await searchPosts(query);
+                renderPosts(posts, postsContainer);
+            } else {
+                fetchPosts(); // Fetch all posts if search query is empty
+            }
+        }
+    });
+
+    // Removes search results when the search input is cleared
+    searchInput.addEventListener("input", () => {
+        if (searchInput.value.trim() === "") {
+            fetchPosts(); // Fetch all posts if search query is empty
+        }
+    });
     
