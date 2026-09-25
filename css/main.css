@@ -38,3 +38,13 @@ body {
     clip-path: inset(50%);
     white-space: nowrap;
 }
+
+/* Fonts */
+h1,
+h2,
+.navbar-option,
+.post-author,
+.edit-button,
+.delete-button {
+    font-family: var(--primary-font);
+}
