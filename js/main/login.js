@@ -45,5 +45,14 @@ form.addEventListener("submit", async function (e) {
     try {
         const data = await loginUser(credentials);
 
-    
-}
+        // Store the token and username in localStorage
+        localStorage.setItem("accessToken", data.data.accessToken);
+        localStorage.setItem("username", data.data.name);
+
+        alert("Login successful!");
+        window.location.href = "feed.html"; // Redirect to feed page
+
+    } catch (error) {
+        alert("Login failed: " + error.message);
+    }
+});
