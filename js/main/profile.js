@@ -24,3 +24,19 @@ async function loadProfile() {
 }
 
 loadProfile();
+
+// Log out functionality
+const logoutButton = document.getElementById("logoutButton");
+
+if (logoutButton) {
+    logoutButton.addEventListener("click", () => {
+        try {
+            localStorage.removeItem("accessToken");
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 300); // 3 seconds delay
+        } catch (error) {
+            console.error("Error during logout:", error);
+        }
+    });
+}
