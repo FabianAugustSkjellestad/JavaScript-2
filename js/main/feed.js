@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchButton = document.getElementById("searchButton");
     const createPostButton = document.getElementById("createPostButton");
     const createPostForm = document.getElementById("createPostForm");
-    
+
 // Function to fetch posts
 async function fetchPosts() {
     try {
@@ -98,6 +98,3 @@ async function fetchPosts() {
 
 
 });
-
-// Initial fetch of posts when the page loads
-fetchPosts();
