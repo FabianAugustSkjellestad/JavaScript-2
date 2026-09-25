@@ -103,3 +103,21 @@ a:hover,
 a:focus {
     color: var(--hover-color);
 }
+
+#menu-checkbox {
+    display: none;
+}
+
+#menu-checkbox:checked ~ .navbar-links {
+    display: block;
+}
+
+.hamburger-menu {
+    cursor: pointer;
+    z-index: 20;
+    font-size: var(--font-size-h3);
+}
+
+.navbar-links li {
+    margin: 30px 0;
+}
