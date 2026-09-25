@@ -52,3 +52,14 @@ export function renderEditPost(post, container, onSave) {
     postImageLabel.textContent = "Edit the image URL of your post:";
     postImageInput.value = typeof post.media === "string" ? post.media : post.media?.url || "";
     saveButton.textContent = "Save Changes";
+
+    editPostElement.appendChild(postTitleLabel);
+    editPostElement.appendChild(postTitleInput);
+    editPostElement.appendChild(postBodyLabel);
+    editPostElement.appendChild(postBodyInput);
+    editPostElement.appendChild(postTagsLabel);
+    editPostElement.appendChild(postTagsInput);
+    editPostElement.appendChild(postImageLabel);
+    editPostElement.appendChild(postImageInput);
+    editPostElement.appendChild(saveButton);
+    container.appendChild(editPostElement);
