@@ -98,6 +98,10 @@ export function renderPosts(posts, container) {
             postImage.src = post.media.url;
             postImage.alt = post.media.alt || "Post image";
             postImage.className = "post-image";
+            postImage.onerror = () => {
+                // If the image fails to load, remove it
+                postImage.remove();
+            };
             postElement.appendChild(postImage);
         }
 
@@ -110,4 +114,3 @@ export function renderPosts(posts, container) {
         container.appendChild(postElement);
     });
 }
-

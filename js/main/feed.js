@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function fetchPosts() {
     try {
         const posts = await getAllPosts();
+        console.log("Raw API response structure:", posts); // Log the raw API response structure
         renderPosts(posts, postsContainer);
     } catch (error) {
         console.error("Error fetching posts:", error);

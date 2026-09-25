@@ -34,11 +34,11 @@ export async function getAllPosts() {
     });
 
     if (!response.ok) {
-        throw new Error(`Failed to fetch posts.`);
+        throw new Error(`Failed to fetch posts: ${response.status}`);
     }
 
-    const data = await response.json();
-    return data;
+    const result = await response.json();
+    return result.data;
 }
 
 // Fetch a single post by ID
