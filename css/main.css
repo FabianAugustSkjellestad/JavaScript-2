@@ -48,3 +48,14 @@ h2,
 .delete-button {
     font-family: var(--primary-font);
 }
+
+p,
+.auth-form,
+.search-input,
+.create-post-input {
+    font-family: var(--primary-font);
+}
+
+p {
+    color: var(--text-color);
+}
