@@ -57,7 +57,7 @@ form.addEventListener('submit', async function (e) {
         await registerUser(userData);
         // Redirect to login page after successful registration
         alert('Registration successful! Redirecting to login page...');
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     } catch (error) {
         // Handle registration error (e.g., user already exists)
         alert(`Registration failed: ${error.message}`);
