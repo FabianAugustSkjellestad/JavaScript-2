@@ -222,4 +222,13 @@ textarea {
     padding: 8px 16px;
     transition: background-color 0.3s ease;
 }
+
+.auth-button:hover,
+.logout-button:hover,
+.search-button:hover,
+.publish-button:hover,
+.create-post-button:hover,
+.save-button:hover {
+    background-color: var(--hover-color);
+}
     
