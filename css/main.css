@@ -59,3 +59,13 @@ p,
 p {
     color: var(--text-color);
 }
+
+/* Header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: var(--primary-color);
+    position: relative;
+}
