@@ -231,4 +231,10 @@ textarea {
 .save-button:hover {
     background-color: var(--hover-color);
 }
+
+/* Error messages */
+.error-message {
+    color: var(--error-color);
+    font-size: var(--font-size-input);
+}
     
