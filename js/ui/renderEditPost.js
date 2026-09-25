@@ -42,3 +42,13 @@ export function renderEditPost(post, container, onSave) {
     postTitleInput.type = "text";
     postTagsInput.type = "text";
     postImageInput.type = "url";
+
+    postTitleLabel.textContent = "Title:";
+    postTitleInput.value = post.title;
+    postBodyLabel.textContent = "Edit the body of your post:";
+    postBodyInput.value = post.body || "";
+    postTagsLabel.textContent = "Edit the tags of your post";
+    postTagsInput.value = post.tags ? post.tags.join(", ") : "";
+    postImageLabel.textContent = "Edit the image URL of your post:";
+    postImageInput.value = typeof post.media === "string" ? post.media : post.media?.url || "";
+    saveButton.textContent = "Save Changes";
