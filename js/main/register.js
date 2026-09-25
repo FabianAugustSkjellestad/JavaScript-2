@@ -29,3 +29,37 @@ passwordInput.addEventListener('blur', () => {
     const result = isValidPassword(passwordInput.value);
     passwordError.textContent = result.message;
 });
+
+// Submit event listener for the registration form
+form.addEventListener('submit', async function (e) {
+    e.preventDefault(); // Prevent the default form submission
+    
+    const nameCheck = isValidName(nameInput.value);
+    const emailCheck = isValidEmail(emailInput.value);
+    const passwordCheck = isValidPassword(passwordInput.value);
+
+    // Show error messages if validation fails
+    nameError.textContent = nameCheck.message;
+    emailError.textContent = emailCheck.message;
+    passwordError.textContent = passwordCheck.message;
+
+    if (!nameCheck.valid || !emailCheck.valid || !passwordCheck.valid) {
+        return; // Stop before making the API call if validation fails
+    }
+
+    const userData = {
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        password: passwordInput.value.trim()
+    };
+
+    try {
+        await registerUser(userData);
+        // Redirect to login page after successful registration
+        alert('Registration successful! Redirecting to login page...');
+        window.location.href = 'login.html';
+    } catch (error) {
+        // Handle registration error (e.g., user already exists)
+        alert(`Registration failed: ${error.message}`);
+    }
+});
