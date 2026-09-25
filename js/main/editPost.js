@@ -23,3 +23,24 @@ async function loadEditPost() {
 }
 
 loadEditPost();
+
+// Publish edited post and redirect to the post page
+async function publishEditedPost(postId, postData) {
+    try {
+        if (!postId) {
+            throw new Error("No post ID found in the URL.");
+        }
+
+        const editedPostData = {
+            title: postData.title,
+            content: postData.body,
+            media: postData.media
+        };
+
+        await updatePost(postId, editedPostData);
+        window.location.href = `post.html?id=${postId}`;
+    } catch (error) {
+        console.error("Error updating post:", error);
+        alert("Error updating post. Please try again later.");
+    }
+}
