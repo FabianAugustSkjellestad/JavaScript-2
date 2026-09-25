@@ -12,3 +12,22 @@ async function fetchPosts() {
         console.error("Error fetching posts:", error);
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("searchPosts");
+    const searchButton = document.getElementById("searchButton");
+    const createPostButton = document.getElementById("createPostButton");
+    const createPostForm = document.getElementById("createPostForm");
+
+    // Search button click event
+    searchButton.addEventListener("click", async () => {
+        const query = searchInput.value.trim();
+
+        if (query) {
+            const posts = await searchPosts(query);
+            renderPosts(posts, postsContainer);
+        } else {
+            fetchPosts(); // Fetch all posts if search query is empty
+        }
+    });
+    
