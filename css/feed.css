@@ -35,3 +35,16 @@
     padding: 5px 10px;
     border-radius: 6px;
 }
+
+.search-input,
+.create-post-input {
+    border: 1px solid var(--text-color);
+}
+
+.create-post-input-body {
+    height: 100px;
+}
+
+.post-element {
+    cursor: pointer;
+}
