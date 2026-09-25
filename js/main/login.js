@@ -33,7 +33,7 @@ form.addEventListener("submit", async function (e) {
     emailError.textContent = emailCheck.message;
     passwordError.textContent = passwordCheck.message;
 
-    if (!emailCheck.isValid || !passwordCheck.isValid) {
+    if (!emailCheck.Valid || !passwordCheck.Valid) {
         return; // Stop submission if validation fails
     }
 
