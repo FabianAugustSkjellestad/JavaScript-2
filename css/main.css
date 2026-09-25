@@ -19,3 +19,11 @@
     --font-weight-medium: 500;
     --font-weight-normal: 400;
 }
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
