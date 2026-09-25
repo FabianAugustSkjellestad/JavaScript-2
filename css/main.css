@@ -135,3 +135,13 @@ footer {
     color: var(--primary-color);
     margin: 20px 0;
 }
+
+/* All Pages */
+h1 {
+    text-align: center;
+}
+
+input,
+textarea {
+    font-size: var(--font-size-input);
+}
