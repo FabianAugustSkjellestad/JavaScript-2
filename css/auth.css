@@ -15,7 +15,7 @@ main {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
-    width: 310px;
+    width: 300px;
 }
 
 input {
@@ -34,4 +34,10 @@ input {
     font-weight: var(--font-weight-semibold);
     cursor: pointer;
     padding: 3px;
-}    
+}
+
+.auth-extra-button:hover {
+    text-decoration: underline;
+    transition: transform 0.2s ease-in-out;
+    transform: scaleX(1.55);
+}
