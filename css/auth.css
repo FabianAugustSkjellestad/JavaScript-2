@@ -38,6 +38,4 @@ input {
 
 .auth-extra-button:hover {
     text-decoration: underline;
-    transition: transform 0.2s ease-in-out;
-    transform: scaleX(1.55);
 }
