@@ -97,6 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
         fetchPosts(); // Refresh the posts after creating a new one
     });
 
-    // Initial fetch of posts
-    fetchPosts();
+
 });
+
+// Initial fetch of posts when the page loads
+fetchPosts();
