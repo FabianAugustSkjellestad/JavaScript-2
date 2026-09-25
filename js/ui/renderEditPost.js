@@ -28,3 +28,17 @@ export function renderEditPost(post, container, onSave) {
     postBodyLabel.setAttribute("for", "editPostBody");
     postTagsLabel.setAttribute("for", "editPostTags");
     postImageLabel.setAttribute("for", "editPostImage");
+
+    postTitleLabel.className = "sr-only";
+    postTitleInput.className = "edit-post-input";
+    postBodyLabel.className = "sr-only";
+    postBodyInput.className = "edit-post-body";
+    postTagsLabel.className = "sr-only";
+    postTagsInput.className = "edit-post-tags";
+    postImageLabel.className = "sr-only";
+    postImageInput.className = "edit-post-image";
+    saveButton.className = "save-button";
+
+    postTitleInput.type = "text";
+    postTagsInput.type = "text";
+    postImageInput.type = "url";
