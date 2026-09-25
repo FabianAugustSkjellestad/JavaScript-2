@@ -20,3 +20,30 @@ passwordInput.addEventListener("blur", () => {
     const result = isValidPassword(passwordInput.value);
     passwordError.textContent = result.message;
 });
+
+// Submit event handler
+form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    // Validation
+    const emailCheck = isValidEmail(emailInput.value);
+    const passwordCheck = isValidPassword(passwordInput.value);
+
+    // Display validation errors
+    emailError.textContent = emailCheck.message;
+    passwordError.textContent = passwordCheck.message;
+
+    if (!emailCheck.isValid || !passwordCheck.isValid) {
+        return; // Stop submission if validation fails
+    }
+
+    const credentials = {
+        email: emailInput.value.trim(),
+        password: passwordInput.value.trim(),
+    };
+
+    try {
+        const data = await loginUser(credentials);
+
+    
+}
