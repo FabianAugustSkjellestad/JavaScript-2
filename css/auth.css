@@ -1,0 +1,11 @@
+main {
+    height: 80vh;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    width: 100%;
+}
