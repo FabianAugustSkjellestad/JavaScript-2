@@ -95,6 +95,4 @@ async function fetchPosts() {
         createPostForm.reset();
         fetchPosts(); // Refresh the posts after creating a new one
     });
-
-
 });
