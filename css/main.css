@@ -93,3 +93,13 @@ p {
     font-size: var(--font-size-h1);
     margin: 20px 0;
 }
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+a:hover,
+a:focus {
+    color: var(--hover-color);
+}
