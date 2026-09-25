@@ -37,18 +37,18 @@
                 <form id="createPostForm" class="create-post-form">
                     <label for="postTitle" class="sr-only">Post Title</label>
                     <input type="text" id="postTitle" name="title" class="create-post-input" placeholder="Post Title" required>
-                    <label for="postContent" class="sr-only">Post Content</label>
-                    <textarea id="postContent" name="content" class="create-post-textarea" placeholder="Write your post here..." required></textarea>
+                    <label for="postBody" class="sr-only">Post Content</label>
+                    <textarea id="postBody" name="content" class="create-post-textarea" placeholder="Write your post here..." required></textarea>
                     <label for="postTags" class="sr-only">Post tags</label>
                     <input type="text" id="postTags" name="tags" class="create-post-input" placeholder="Tags (optional)">
-                    <label for="postImgUrl" class="sr-only">Image URL(optional)</label>
-                    <input type="url" id="postImgUrl" class="create-post-input" name="imageUrl" placeholder="Image URL (optional)">
+                    <label for="postImageUrl" class="sr-only">Image URL(optional)</label>
+                    <input type="url" id="postImageUrl" class="create-post-input" name="imageUrl" placeholder="Image URL (optional)">
                     <button type="submit" class="publish-btn">Publish Post</button>
                 </form>
                 <button id="createPostButton" class="create-post-button">+ Create new post</button>
             </div>
         </div>
-        <div id="postContainer" class="post-container"></div>
+        <div id="postsContainer" class="post-container"></div>
     </main>
     <footer>
         <img src="favicon_io/favicon.ico" alt="connect logo" class="footer-logo">

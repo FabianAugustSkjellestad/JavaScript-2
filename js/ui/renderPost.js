@@ -23,6 +23,7 @@ export function renderSinglePost(post, container) {
         }
         // Render author name, if missing fallback to "Unknown Author"
         const authorName = document.createElement("a");
+        const name = post.author.name || "Unknown Author";
         authorName.href = `profile.html?id=${post.author.name}`;
         authorName.textContent = post.author.name || "Unknown";
         authorSection.appendChild(authorName);
@@ -34,7 +35,7 @@ export function renderSinglePost(post, container) {
     const postTitle = document.createElement("h2");
     postTitle.className = "post-title";
     postTitle.textContent = post.title || "Untitled Post";
-    postElement.appendChild(elementTitle);
+    postCard.appendChild(postTitle);
 
     // Body section
     const postBody = document.createElement("p");
