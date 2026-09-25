@@ -63,3 +63,19 @@ export function renderEditPost(post, container, onSave) {
     editPostElement.appendChild(postImageInput);
     editPostElement.appendChild(saveButton);
     container.appendChild(editPostElement);
+
+    saveButton.addEventListener("click", () => {
+        const updatedPost = {
+            title: postTitleInput.value.trim() || post.title,
+            body: postBodyInput.value.trim() || post.body
+        };
+
+        const mediaValue = postImageInput.value.trim() || (typeof post.media === "string" ? post.media : post.media?.url);
+        if (mediaValue) {
+            updatedPost.media = {
+                url: mediaValue,
+            }
+        }
+    onSave(post.id, updatedPost);
+    });
+}
