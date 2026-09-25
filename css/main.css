@@ -184,3 +184,14 @@ textarea {
     margin-top: 0;
     border-top: solid 1px var(--primary-color);
 }
+
+.post-tags,
+.post-title,
+.post-body {
+    padding-left: 10px;
+}
+
+.post-title {
+    color: var(--text-color);
+}
+
