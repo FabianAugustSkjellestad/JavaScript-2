@@ -1,8 +1,13 @@
 import { getAllPosts, searchPosts, createPost } from "../api/posts.js";
 import { renderPosts } from "../ui/renderPosts.js";
 
-const postsContainer = document.getElementById("postsContainer");
-
+document.addEventListener("DOMContentLoaded", () => {
+    const postsContainer = document.getElementById("postsContainer");
+    const searchInput = document.getElementById("searchPosts");
+    const searchButton = document.getElementById("searchButton");
+    const createPostButton = document.getElementById("createPostButton");
+    const createPostForm = document.getElementById("createPostForm");
+    
 // Function to fetch posts
 async function fetchPosts() {
     try {
@@ -12,12 +17,6 @@ async function fetchPosts() {
         console.error("Error fetching posts:", error);
     }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    const searchInput = document.getElementById("searchPosts");
-    const searchButton = document.getElementById("searchButton");
-    const createPostButton = document.getElementById("createPostButton");
-    const createPostForm = document.getElementById("createPostForm");
 
     // Search button click event
     searchButton.addEventListener("click", async () => {
