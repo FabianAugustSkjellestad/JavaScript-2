@@ -1,12 +1,13 @@
 :root {
     --primary-font: 'Arial', sans-serif;
 
-    --primary-color: #00fffb;
-    --secondary-color: #ff00ff;
+    --primary-color: #001542;
+    --secondary-color: #f0f0f0;
     --background-color: #ffffff;
     --text-color: #000000;
     --error-color: #ff0000;
     --hover-color: #00ccff;
+    --button-color: #00e5ff;
 
     --font-size-h1: 32px;
     --font-size-h2: 24px;
@@ -47,6 +48,9 @@ h2,
 .edit-button,
 .delete-button {
     font-family: var(--primary-font);
+}
+h1 {
+    color: var(--primary-color);
 }
 
 p,
@@ -216,7 +220,7 @@ textarea {
     font-family: var(--primary-font);
     font-size: var(--font-size-button);
     background-color: var(--primary-color);
-    color: var(--text-color);
+    color: var(--button-color);
     cursor: pointer;
     border-radius: 6px;
     padding: 8px 16px;
@@ -230,6 +234,7 @@ textarea {
 .create-post-button:hover,
 .save-button:hover {
     background-color: var(--hover-color);
+    color: var(--primary-color);
 }
 
 /* Error messages */
