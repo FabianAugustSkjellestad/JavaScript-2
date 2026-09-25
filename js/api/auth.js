@@ -40,4 +40,5 @@ export async function loginUser(credentials) {
     }
 
     return data;
+
 }
