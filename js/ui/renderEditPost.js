@@ -1,8 +1,8 @@
 export function renderEditPost(post, container, onSave) {
     container.innerHTML = "";
 
-    const editPostElement = document.createElement("div");
-    editPostElement.className = "edit-post";
+    const editPostCard = document.createElement("div");
+    editPostCard.className = "edit-post-card";
 
     const postTitleLabel = document.createElement("label");
     const postTitleInput = document.createElement("input");
@@ -53,16 +53,16 @@ export function renderEditPost(post, container, onSave) {
     postImageInput.value = typeof post.media === "string" ? post.media : post.media?.url || "";
     saveButton.textContent = "Save Changes";
 
-    editPostElement.appendChild(postTitleLabel);
-    editPostElement.appendChild(postTitleInput);
-    editPostElement.appendChild(postBodyLabel);
-    editPostElement.appendChild(postBodyInput);
-    editPostElement.appendChild(postTagsLabel);
-    editPostElement.appendChild(postTagsInput);
-    editPostElement.appendChild(postImageLabel);
-    editPostElement.appendChild(postImageInput);
-    editPostElement.appendChild(saveButton);
-    container.appendChild(editPostElement);
+    editPostCard.appendChild(postTitleLabel);
+    editPostCard.appendChild(postTitleInput);
+    editPostCard.appendChild(postBodyLabel);
+    editPostCard.appendChild(postBodyInput);
+    editPostCard.appendChild(postTagsLabel);
+    editPostCard.appendChild(postTagsInput);
+    editPostCard.appendChild(postImageLabel);
+    editPostCard.appendChild(postImageInput);
+    editPostCard.appendChild(saveButton);
+    container.appendChild(editPostCard);
 
     saveButton.addEventListener("click", () => {
         const updatedPost = {
