@@ -15,6 +15,24 @@ function getHeaders() {
     };
 }
 
+async function handleResponse(response, errorMessage) {
+    if (!response.ok) {
+        let details = "";
+
+        try {
+            const errorData = await response.json();
+            details = errorData.errors?.[0]?.message || "";
+        } catch {
+            // The response may not be JSON.
+        }
+
+        throw new Error(`${errorMessage} (${response.status})${details ? `: ${details}` : ""}`);
+    }
+
+    const result = await response.json();
+    return result.data;
+}
+
 // Get profile
 export async function getProfile(name) {
     const response = await fetch(`${BASE_URL}/${name}`, {
