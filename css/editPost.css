@@ -21,3 +21,11 @@ main {
     border: 1px solid var(--primary-color);
     border-radius: 4px;
 }
+
+.edit-post-body {
+    height: 100px;
+}
+
+.save-button {
+    padding: 5px 10px;
+}
