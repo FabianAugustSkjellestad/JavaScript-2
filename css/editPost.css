@@ -1,0 +1,23 @@
+main {
+    height: 80vh;
+}
+
+.edit-post-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 50px 20px;
+    align-items: center;
+    background-color: var(--secondary-color);
+    margin: 30px auto;
+}
+
+.edit-post-title,
+.edit-post-body,
+.edit-post-tags,
+.edit-post-image {
+    width: 300px;
+    padding: 8px 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+}
