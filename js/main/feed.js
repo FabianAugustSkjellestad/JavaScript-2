@@ -92,8 +92,13 @@ async function fetchPosts() {
             };
         }
 
-        await createPost(newPost);
-        createPostForm.reset();
-        fetchPosts(); // Refresh the posts after creating a new one
+        try {
+            await createPost(newPost);
+            createPostForm.reset();
+            await fetchPosts();
+        } catch (error) {
+            console.error("Error creating post:", error);
+        }
     });
+    fetchPosts(); // Initial fetch of posts when the page loads
 });
