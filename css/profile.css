@@ -43,3 +43,18 @@
     display: flex;
     padding-bottom: 10px;
 }
+
+.follow-button {
+    border: none;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 6px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    font-size: var(font-size-button);
+    font-weight: var(font-weight-medium);
+}
+
+.post-card {
+    cursor: pointer;
+}
