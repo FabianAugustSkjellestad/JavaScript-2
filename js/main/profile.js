@@ -1,4 +1,4 @@
-import { getProfile, getProfilePosts } from "../api/profile.js";
+import { getProfile, getProfilePosts } from "../api/profiles.js";
 import { renderProfile } from "../ui/renderProfile.js";
 
 const container = document.getElementById("profileContainer");
@@ -10,6 +10,12 @@ async function loadProfile() {
 
     const profileToLoad = usernameFromUrl || loggedInUser;
 
+    if (!profileToLoad) {
+        console.error("No profile username was provided.");
+        container.textContent = "Unable to identify the profile.";
+        return;
+    }
+
     try {
         const profile = await getProfile(profileToLoad);
         const posts = await getProfilePosts(profileToLoad);
@@ -20,6 +26,8 @@ async function loadProfile() {
 
     } catch (error) {
         console.error("Error loading profile:", error);
+        container.textContent = 
+        `Error loading profile: ${error.message}`;
     }
 }
 
