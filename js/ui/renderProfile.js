@@ -62,11 +62,11 @@ export function renderProfile(profile, container) {
         followButton.addEventListener("click", async () => {
             try {
                 if(followButton.textContent === "Unfollow") {
-                    await unfollowUser(profile.username);
+                    await unfollowUser(profile.name);
                     followButton.textContent = "Follow";
                 }
                 else {
-                    await followUser(profile.username);
+                    await followUser(profile.name);
                     followButton.textContent = "Unfollow";
                 }
                 window.location.reload(); // Reload the page to update the profile view
