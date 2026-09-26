@@ -18,11 +18,11 @@ export function renderPosts(posts, container) {
     container.innerHTML = "";
 
     posts.forEach(post => {
-        const postElement = document.createElement("div");
+        const postCard = document.createElement("div");
         const postTitle = document.createElement("h2");
         const postBody = document.createElement("p");
 
-        postElement.className = "post";
+        postCard.className = "post-card";
         postTitle.className = "post-title";
         postBody.className = "post-body";
 
@@ -42,16 +42,16 @@ export function renderPosts(posts, container) {
             }
 
             authorSection.className = "post-author";
-            authorName.textContent = post.author.username || "Unknown Author";
-            authorName.href = `/profile.html?username=${post.author.username}`;
+            authorName.textContent = post.author.name || "Unknown Author";
+            authorName.href = `/profile.html?name=${post.author.name}`;
             authorSection.appendChild(authorName);
 
-            postElement.appendChild(authorSection);
+            postCard.appendChild(authorSection);
         }
 
         const username = localStorage.getItem("username");
 
-        if (post.author?.username === username) {
+        if (post.author?.name === username) {
 
             const editButton = document.createElement("button");
             const deleteButton = document.createElement("button");
@@ -61,8 +61,8 @@ export function renderPosts(posts, container) {
             editButton.textContent = "Edit";
             deleteButton.textContent = "Delete";
 
-            postElement.appendChild(editButton);
-            postElement.appendChild(deleteButton);
+            postCard.appendChild(editButton);
+            postCard.appendChild(deleteButton);
 
             editButton.addEventListener("click", (e) => {
                 e.preventDefault();
@@ -74,7 +74,7 @@ export function renderPosts(posts, container) {
                 if (confirm("Are you sure you want to delete this post?")) {
                     try {
                         await deletePost(post.id);
-                        postElement.remove();
+                        postCard.remove();
                     } catch (error) {
                         console.error("Error deleting post:", error);
                         alert("Failed to delete the post. Please try again.");
@@ -83,14 +83,14 @@ export function renderPosts(posts, container) {
             });
         }
 
-        postElement.appendChild(postTitle);
-        postElement.appendChild(postBody);
+        postCard.appendChild(postTitle);
+        postCard.appendChild(postBody);
 
         if (post.tags?.length) {
             const postTags = document.createElement("p");
             postTags.className = "post-tags";
             postTags.textContent = `#${post.tags.join("#")}`;
-            postElement.appendChild(postTags);
+            postCard.appendChild(postTags);
         }
 
         if (post.media?.url) {
@@ -102,15 +102,15 @@ export function renderPosts(posts, container) {
                 // If the image fails to load, remove it
                 postImage.remove();
             };
-            postElement.appendChild(postImage);
+            postCard.appendChild(postImage);
         }
 
-        postElement.addEventListener("click", (e) => {
+        postCard.addEventListener("click", (e) => {
             if (e.target.closest("button") || e.target.closest("a")) return; // Prevent navigation if a button or link was clicked
             window.location.href = `./post.html?id=${post.id}`;
         }
 
         );
-        container.appendChild(postElement);
+        container.appendChild(postCard);
     });
 }
