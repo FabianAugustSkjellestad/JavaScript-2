@@ -42,7 +42,7 @@ export async function getAllPosts() {
 }
 
 // Fetch a single post by ID
-export async function getPostById(postId) {
+export async function getSinglePost(postId) {
     const response = await fetch(`${BASE_URL}/${postId}?_author=true`, {
         headers: getHeaders(),
     });
