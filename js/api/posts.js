@@ -57,7 +57,7 @@ export async function getSinglePost(postId) {
 
 // Search posts
 export async function searchPosts(query) {
-    const response = await fetch(`${BASE_URL}?_author=true&title_contains=${query}`, {
+    const response = await fetch(`${BASE_URL}/search?q=${encodeURIComponent(query)}&_author=true`, {
         headers: getHeaders(),
     });
 
