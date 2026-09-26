@@ -86,7 +86,7 @@ export async function createPost(postData) {
 }
 
 // Update/edit an existing post
-export async function updatePost(postId, postData) {
+export async function editedPost(postId, postData) {
     const response = await fetch(`${BASE_URL}/${postId}`, {
         method: 'PUT',
         headers: getHeaders(),

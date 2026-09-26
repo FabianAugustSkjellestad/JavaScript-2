@@ -1,6 +1,6 @@
 import { getSinglePost } from "../api/posts.js";
 import { renderEditPost } from "../ui/renderEditPost.js";
-import { updatePost } from "../api/posts.js";
+import { editedPost } from "../api/posts.js";
 
 const container = document.getElementById("editPostContainer");
 
@@ -33,11 +33,11 @@ async function publishEditedPost(postId, postData) {
 
         const editedPostData = {
             title: postData.title,
-            content: postData.body,
+            body: postData.body,
             media: postData.media
         };
 
-        await updatePost(postId, editedPostData);
+        await editedPost(postId, editedPostData);
         window.location.href = `post.html?id=${postId}`;
     } catch (error) {
         console.error("Error updating post:", error);
