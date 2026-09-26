@@ -58,3 +58,22 @@
 .post-card {
     cursor: pointer;
 }
+
+/* Responsive design Desktop/Tablet */
+@media (min-width: 768px) {
+    .top-bar {
+        margin: 8px 25px;
+    }
+
+    .profile-user-row {
+        justify-content: center;
+    }
+
+    .profile-summary {
+        justify-content: center;
+    }
+
+    .profile-banner {
+        height: 80px;
+    }
+}
