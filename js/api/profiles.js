@@ -35,7 +35,7 @@ async function handleResponse(response, errorMessage) {
 
 // Get profile
 export async function getProfile(name) {
-    const response = await fetch(`${BASE_URL}/${name}`, {
+    const response = await fetch(`${BASE_URL}/${name}?_followers=true&_following=true`, {
         headers: getHeaders(),
     });
 
@@ -49,7 +49,7 @@ export async function getProfile(name) {
 
 // Get users posts
 export async function getProfilePosts(name) {
-    const response = await fetch(`${BASE_URL}/${name}/posts`, {
+    const response = await fetch(`${BASE_URL}/${name}/posts?_author=true&_comments=true&_reactions=true`, { 
         headers: getHeaders(),
     });
 
