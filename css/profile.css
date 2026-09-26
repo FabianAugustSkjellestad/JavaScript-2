@@ -20,3 +20,26 @@
     object-fit: cover;
 }
 
+.profile-user-row {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 15px;
+}
+
+.profile-name {
+    font-size: var(--font-size-h3);
+}
+
+.profile-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.profile-summary {
+    gap: 8px;
+    justify-content: space-evenly;
+    display: flex;
+    padding-bottom: 10px;
+}
