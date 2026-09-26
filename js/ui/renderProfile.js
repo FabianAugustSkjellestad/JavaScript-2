@@ -1,4 +1,5 @@
 import { followUser, unfollowUser, getProfile } from "../api/profiles.js";
+import { renderPosts } from "./renderPosts.js";
 
 export function renderProfile(profile, container) {
     container.innerHTML = "";
@@ -7,13 +8,13 @@ export function renderProfile(profile, container) {
     const header = document.createElement("div");
     header.className = "profile-header";
 
-    // Profile picture
-    if (profile.image?.url) {
-        const profileImage = document.createElement("img");
-        profileImage.src = profile.image.url;
-        profileImage.alt = `${profile.username}'s profile picture`;
-        profileImage.className = "profile-image";
-        header.appendChild(profileImage);
+    // Profile banner
+    if (profile.banner?.url) {
+        const banner = document.createElement("img");
+        banner.src = profile.banner.url;
+        banner.alt = profile.banner.alt || "Profile banner";
+        banner.className = "profile-image";
+        header.appendChild(banner);
     }
 
     // wrapper avatar and username
@@ -24,16 +25,16 @@ export function renderProfile(profile, container) {
     if (profile.avatar?.url) {
         const avatar = document.createElement("img");
         avatar.src = profile.avatar.url;
-        avatar.alt = `${profile.username}'s avatar`;
+        avatar.alt = profile.avatar.alt || "Profile avatar";
         avatar.className = "profile-avatar";
         userRow.appendChild(avatar);
     }
 
-    // Username
-    const username = document.createElement("h2");
-    username.textContent = profile.username;
-    username.className = "profile-username";
-    userRow.appendChild(username);
+    // Name
+    const name = document.createElement("h2");
+    name.textContent = profile.name;
+    name.className = "profile-name";
+    userRow.appendChild(name);
 
     header.appendChild(userRow);
 
@@ -49,11 +50,11 @@ export function renderProfile(profile, container) {
     const loggedInUser = localStorage.getItem("username");
 
     // Only show the follow/unfollow button if the logged-in user is viewing another user's profile
-    if (profile.username !== loggedInUser) {
+    if (profile.name !== loggedInUser) {
         const followButton = document.createElement("button");
         followButton.className = "follow-button";
         // Check if the logged-in user is following the profile with some(). If so, set the button text to "Unfollow", otherwise set it to "Follow".
-        const isFollowing = profile.followers.some(follower => follower.username === loggedInUser);
+        const isFollowing = profile.followers?.some(follower => follower.name === loggedInUser);
         followButton.textContent = isFollowing ? "Unfollow" : "Follow";
         header.appendChild(followButton);
         
