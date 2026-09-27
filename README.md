@@ -12,4 +12,4 @@ The application interacts with the Noroff Social API and allows users to registe
 * Noroff Social API
 
 # Resources
-## Favicon - https://favicon.io/
+### Favicon - https://favicon.io/
