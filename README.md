@@ -10,3 +10,6 @@ The application interacts with the Noroff Social API and allows users to registe
 * Vanilla JavaScript (ES6 Modules)
 * CSS
 * Noroff Social API
+
+# Resources
+## Favicon - https://favicon.io/
