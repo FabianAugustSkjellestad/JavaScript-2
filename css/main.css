@@ -164,10 +164,11 @@ textarea {
     word-break: break-all;
 }
 
-.post-element {
+.post-card {
     margin: 20px auto;
     width: 100%;
     background-color: var(--secondary-color);
+    box-sizing: border-box;
 }
 
 .author-avatar {
@@ -271,13 +272,15 @@ textarea {
     }
 
     /* Posts */
-    .post-element {
-        width: 600px;
+    .post-card {
+        width: 100%;
         padding: 40px 30px;
+        box-sizing: border-box;
     }
 
     .post-image {
         height: 400px;
-        width: 600px;
+        width: 100%;
+        object-fit: cover;
     }
 }
