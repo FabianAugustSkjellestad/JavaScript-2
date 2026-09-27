@@ -11,5 +11,12 @@ The application interacts with the Noroff Social API and allows users to registe
 * CSS
 * Noroff Social API
 
+# Installation
+Follow the steps to run the project locally:
+* Clone the repository
+  https://github.com/FabianAugustSkjellestad/JavaScript-2.git
+* Open the project on VS Code
+* Start the project using live server
+
 # Resources
 ### Favicon - https://favicon.io/
