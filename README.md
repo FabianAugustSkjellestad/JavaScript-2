@@ -29,3 +29,12 @@ When running the project:
 
 # Resources
 ### Favicon - https://favicon.io/
+
+# Links
+- https://fabianaugustskjellestad.github.io/JavaScript-2/
+- https://github.com/users/FabianAugustSkjellestad/projects/4
+
+# Contact
+- Fabian August Skjellestad
+
+fabianaugustskjellestad@gmail.com
