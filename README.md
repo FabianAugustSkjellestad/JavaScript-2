@@ -18,5 +18,14 @@ Follow the steps to run the project locally:
 * Open the project on VS Code
 * Start the project using live server
 
+# Usage
+When running the project:
+- Register or log in (@stud.noroff.no)
+- View posts
+- Post own posts
+- Follow/unfollow others
+- Edit your own posts
+- Delete posts
+
 # Resources
 ### Favicon - https://favicon.io/
