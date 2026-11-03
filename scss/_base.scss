@@ -1,0 +1,19 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page-wrapper {
+    max-width: 970px;
+    margin-inline: auto;
+    padding: 1.5rem 1rem;
+}
