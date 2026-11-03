@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "sass --watch src/scss/styles.scss:dist/css/styles.css",
-    "build": "sass src/scss/styles.scss:dist/css/styles.css --style compressed --no-source-map"
+    "dev": "sass --watch scss:css --load-path=node_modules",
+    "build": "sass scss:css --style compressed --no-source-map --load-path=node_modules"
   },
   "repository": {
     "type": "git",
