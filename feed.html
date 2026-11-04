@@ -6,7 +6,6 @@
     <meta name="description" content="Connect - View your feed on Connect.">
     <title>Connect | Feed</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/feed.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,44 +14,50 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <label for="menu-checkbox" class="hamburger-menu">&#9776;</label>
-            <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
-            <h2 class="logo">Connect</h2>
-            <ul class="navbar-links">
-                <li><a href="feed.html" class="navbar-option">Feed</a></li>
-                <li><a href="profile.html" class="navbar-option">Profile</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white site-nav">
+            <div class="container-fluid">
+                <h2 class="logo navbar-brand mb-0">Connect</h2>
+                <input type="checkbox" id="menu-checkbox" class="menu-checkbox d-none">
+                <label for="menu-checkbox" class="hamburger-menu navbar-toggler border-0 d-md-none" aria-label="Toggle navigation">&#9776;</label>
+                <ul class="navbar-links navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="feed.html" class="navbar-option nav-link">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile.html" class="navbar-option nav-link">Profile</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
-    <main>
-        <h1>Feed</h1>
-        <div class="feed-container">
-            <form class="search-form">
-                <label for="searchPosts" class="sr-only">Search for posts:</label>
-                <input type="search" id="searchPosts" name="searchPosts" placeholder="Search posts..." class="search-input">
-                <button id="searchButton" type="button" class="search-button">Search</button>
+    <main class="container py-4">
+        <h1 class="mb-4">Feed</h1>
+        <div class="feed-container mb-4">
+            <form class="search-form d-flex gap-2 mb-3">
+                <label for="searchPosts" class="visually-hidden">Search for posts:</label>
+                <input type="search" id="searchPosts" name="searchPosts" placeholder="Search posts..." class="search-input form-control">
+                <button id="searchButton" type="button" class="search-button btn btn-outline-primary">Search</button>
             </form>
             <div>
-                <form id="createPostForm" class="create-post-form">
-                    <label for="postTitle" class="sr-only">Post Title</label>
-                    <input type="text" id="postTitle" name="title" class="create-post-input" placeholder="Post Title" required>
-                    <label for="postBody" class="sr-only">Post Content</label>
-                    <textarea id="postBody" name="body" class="create-post-textarea" placeholder="Write your post here..." required></textarea>
-                    <label for="postTags" class="sr-only">Post tags</label>
-                    <input type="text" id="postTags" name="tags" class="create-post-input" placeholder="Tags (optional)">
-                    <label for="postImageUrl" class="sr-only">Image URL(optional)</label>
-                    <input type="url" id="postImageUrl" class="create-post-input" name="imageUrl" placeholder="Image URL (optional)">
-                    <button type="submit" class="publish-post-button">Publish Post</button>
+                <button id="createPostButton" type="button" class="create-post-button btn btn-primary mb-3">+ Create new post</button>
+                <form id="createPostForm" class="create-post-form card card-body gap-2" style="display: none;">
+                    <label for="postTitle" class="visually-hidden">Post Title</label>
+                    <input type="text" id="postTitle" name="title" class="create-post-input form-control" placeholder="Post Title" required>
+                    <label for="postBody" class="visually-hidden">Post Content</label>
+                    <textarea id="postBody" name="body" class="create-post-textarea form-control" placeholder="Write your post here..." rows="4" required></textarea>
+                    <label for="postTags" class="visually-hidden">Post tags</label>
+                    <input type="text" id="postTags" name="tags" class="create-post-input form-control" placeholder="Tags (optional)">
+                    <label for="postImageUrl" class="visually-hidden">Image URL(optional)</label>
+                    <input type="url" id="postImageUrl" class="create-post-input form-control" name="imageUrl" placeholder="Image URL (optional)">
+                    <button type="submit" class="publish-post-button btn btn-success">Publish Post</button>
                 </form>
-                <button id="createPostButton" type="button" class="create-post-button">+ Create new post</button>
             </div>
         </div>
-        <div id="postsContainer" class="post-container"></div>
+        <div id="postsContainer" class="post-container row g-3"></div>
     </main>
-    <footer>
-        <img src="favicon_io/favicon.ico" alt="connect logo" class="footer-logo">
-        <p>&copy; 2026 Connect. All rights reserved.</p>
+    <footer class="bg-dark text-light py-3 mt-5">
+        <img src="favicon_io/favicon.ico" alt="connect logo" class="footer-logo" width="24" height="24">
+        <p class="mb-0 mt-2">&copy; 2026 Connect. All rights reserved.</p>
     </footer>
 </body>
 </html>
