@@ -1,0 +1,24 @@
+#profileContainer {
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    border-radius: $border-radius-lg;
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  }
+
+    .profile-avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .profile-posts {
+        margin-top: 1.5rem;
+        display: grid;
+        gap: 1rem;
+    }
+}
