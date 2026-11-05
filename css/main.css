@@ -11935,4 +11935,22 @@ a {
   gap: 1rem;
 }
 
+.feed-container .search-form .search-input {
+  max-width: 400px;
+}
+.feed-container .create-post-form[style*=flex] {
+  flex-direction: column;
+}
+
+#editPostContainer .error {
+  color: #dc3545;
+  text-align: center;
+  padding: 1rem;
+}
+#editPostContainer input,
+#editPostContainer textarea {
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
 /*# sourceMappingURL=main.css.map */
