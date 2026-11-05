@@ -15,18 +15,14 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-white site-nav">
-            <div class="container-fluid">
-                <h2 class="logo navbar-brand mb-0">Connect</h2>
-                <input type="checkbox" id="menu-checkbox" class="menu-checkbox d-none">
-                <label for="menu-checkbox" class="hamburger-menu navbar-toggler border-0 d-md-none" aria-label="Toggle navigation">&#9776;</label>
-                <ul class="navbar-links navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="feed.html" class="navbar-option nav-link">Feed</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="profile.html" class="navbar-option nav-link">Profile</a>
-                    </li>
-                </ul>
+            <div class="container">
+                <a class="navbar-brand text-primary" href="feed.html">Connect</a>
+                <div class="d-flex align-items-center gap-3">
+                    <a class="nav-link" href="profile.html">Profile</a>
+                    <button id="logoutButton" class="btn btn-outline--secondary btn-sm">
+                        Log Out
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
