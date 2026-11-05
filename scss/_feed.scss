@@ -1,0 +1,13 @@
+.feed-container {
+  .search-form {
+    .search-input {
+      max-width: 400px;
+    }
+    }
+
+    .create-post-form {
+      &[style*="flex"] {
+        flex-direction: column;
+      }
+    }
+}

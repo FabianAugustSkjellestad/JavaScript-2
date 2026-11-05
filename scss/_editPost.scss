@@ -1,0 +1,14 @@
+#editPostContainer {
+  .error {
+    color: #dc3545;
+    text-align: center;
+    padding: 1rem;
+    }
+
+    //Style inputs injected by renderEditPost
+    input,
+    textarea {
+      width: 100%;
+      margin-bottom: 0.75rem;
+    }
+}
