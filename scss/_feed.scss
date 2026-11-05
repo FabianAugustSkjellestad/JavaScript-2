@@ -1,13 +1,96 @@
 .feed-container {
-  .search-form {
-    .search-input {
-      max-width: 400px;
-    }
-    }
+  max-width: 600px;
+  margin: 0 auto;
 
-    .create-post-form {
-      &[style*="flex"] {
-        flex-direction: column;
-      }
+  .search-form .search-input {
+    max-width: 100%;
+  }
+
+  .create-post-form[style*="flex"] {
+    flex-direction: column;
+  }
+}
+
+// POSTS
+#postsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.post-card {
+  width: 100%;
+  max-width: 600px;
+  background: $light;
+  border: 1px solid $secondary;
+  border-radius: $border-radius;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+}
+
+// Post Header/Author row
+.post-author {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+
+
+  .author-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  a {
+    font-weight: 600;
+    color: $dark;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
     }
+  }
+}
+
+// Post Image 
+.post-image {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  display: block;
+}
+
+// Text content of the post
+.post-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0.75rem 1rem 0.25rem;
+}
+
+.post-body {
+  margin: 0;
+  padding: 0 1rem 0.75rem;
+  color: $dark;
+  line-height: 1.5;
+}
+
+.post-tags {
+  margin: 0;
+  padding: 0 1rem 0.75rem;
+  color: $primary;
+  font-size: 0.875rem;
 }

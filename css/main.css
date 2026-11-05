@@ -11935,11 +11935,89 @@ a {
   gap: 1rem;
 }
 
+.feed-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
 .feed-container .search-form .search-input {
-  max-width: 400px;
+  max-width: 100%;
 }
 .feed-container .create-post-form[style*=flex] {
   flex-direction: column;
+}
+
+#postsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.post-card {
+  width: 100%;
+  max-width: 600px;
+  background: #f8f9fa;
+  border: 1px solid #6b7280;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.post-card:hover {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-author {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+.post-author .author-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.post-author a {
+  font-weight: 600;
+  color: #1f2937;
+  text-decoration: none;
+}
+.post-author a:hover {
+  text-decoration: underline;
+}
+
+.post-image {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  display: block;
+}
+
+.post-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0.75rem 1rem 0.25rem;
+}
+
+.post-body {
+  margin: 0;
+  padding: 0 1rem 0.75rem;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+.post-tags {
+  margin: 0;
+  padding: 0 1rem 0.75rem;
+  color: #4f46e5;
+  font-size: 0.875rem;
 }
 
 #editPostContainer .error {
