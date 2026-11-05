@@ -12020,6 +12020,32 @@ a {
   font-size: 0.875rem;
 }
 
+.edit-button,
+.delete-button {
+  margin: 0.25rem 0.5rem 0.75rem;
+  padding: 0.35rem 0.9rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.edit-button {
+  background-color: #4f46e5;
+  color: #f8f9fa;
+}
+.edit-button:hover {
+  background-color: rgb(16.1323297091%, 11.9840163554%, 85.2708856054%);
+}
+
+.delete-button {
+  background-color: #dc2626;
+  color: #f8f9fa;
+}
+.delete-button:hover {
+  background-color: rgb(69.9019607843%, 11.2745098039%, 11.2745098039%);
+}
+
 #editPostContainer .error {
   color: #dc3545;
   text-align: center;
