@@ -11879,6 +11879,11 @@ a {
   padding: 1.5rem 1rem;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .site-nav {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
