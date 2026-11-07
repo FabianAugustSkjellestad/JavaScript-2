@@ -1,0 +1,26 @@
+.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    .auth-field {
+        margin-bottom: 1rem;
+    }
+
+    //Inline validation messages
+    .error-message {
+        display: block;
+        min-height: 1rem;
+        margin-top: 0.25rem;
+        font-size: 0.85rem;
+        color: $danger;
+    }
+}

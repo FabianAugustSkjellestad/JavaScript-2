@@ -14,23 +14,35 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <label for="menu-checkbox" class="hamburger-menu" id="hamburgerMenu">&#9776;</label>
-            <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
-            <h2 class="logo">Connect</h2>
-            <ul class="navbar-links">
-                <li><a href="feed.html" class="navbar-option">Feed</a></li>
-                <li><a href="profile.html" class="navbar-option">Profile</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white site-nav">
+            <div class="container">
+                <a class="navbar-brand text-primary" href="feed.html">Connect</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#siteNavbar" aria-controls="siteNavbar"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="siteNavbar">
+                    <div class="d-flex align-items-center gap-3 ms-auto">
+                        <a class="nav-link" href="feed.html">Feed</a>
+                        <a class="nav-link" href="profile.html">Profile</a>
+                        <button id="logoutButton" class="btn btn-outline--secondary btn-sm">
+                            Log Out
+                        </button>
+                    </div>
+                </div>
+            </div>
         </nav>
-    </header>
-    <main>
-        <h1>Post</h1>
-        <div id="singlePostContainer" class="post-container"></div>
+    </header> 
+    <main class="container py-4">
+        <h1 class="mb-4">Post</h1>
+        <div id="singlePostContainer" class="post-container mx-auto" style="max-width: 700px;"></div>
     </main>
-    <footer>
-        <img src="favicon_io/favicon.ico" alt="connect logo" class="footer-logo">
-        <p>&copy; 2026 Connect. All rights reserved.</p>
-    </footer>
+    <footer class="bg-dark text-light py-3 mt-5">
+        <img src="favicon_io/favicon.ico" alt="connect logo" class="footer-logo" width="24" height="24">
+        <p class="mb-0 mt-2">&copy; 2026 Connect. All rights reserved.</p>
+        </footer>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> 
 </body>
 </html>

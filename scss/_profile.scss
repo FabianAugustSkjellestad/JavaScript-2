@@ -1,0 +1,89 @@
+#profileContainer {
+  max-width: 600px;
+  margin: 0 auto;
+
+
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 0 0 1.25rem;
+    border-radius: $border-radius-lg;
+    background: $light;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+  }
+
+  .profile-banner {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .profile-user-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1.25rem;
+    margin-top: -6px;
+  }
+
+
+  .profile-avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid $light;
+        flex-shrink: 0;
+  }
+
+  .profile-name {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0;
+        color: $dark;
+        align-self: flex-end;
+        padding-bottom: 0.5rem;
+  }
+
+  .profile-posts {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .follow-button {
+        align-self: flex-start;
+        margin: 0 1.25rem;
+        padding: 0.45rem 1.5rem;
+        border: none;
+        border-radius: $border-radius;
+        background: $primary;
+        color: $light;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background: darken($primary, 10%);
+        }
+    }
+
+    .profile-summary {
+        display: flex;
+        justify-content: space-around;
+        gap: 1rem;
+        padding: 1rem 1.25rem 0;
+        border-top: 1px solid $secondary;
+        margin-top: 0.5rem;
+
+        span {
+            font-size: 0.95rem;
+            color: $dark;
+        }
+    }
+}
